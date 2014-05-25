@@ -3,7 +3,7 @@
     %th.num No
     %th Question
     %th.date Created
-    %th.num Number
+    %th.num Total
     %th.link Link
   - if surveys && surveys.size > 0
     - surveys.each_with_index do |survey,i|
@@ -12,6 +12,7 @@
         %td= link_to survey.question, survey_path(survey)
         %td= survey.created_at.strftime(I18n.t('time.format'))
         %td
+          = survey.answers.count if survey.answers
         %td.center
           = link_to I18n.t('common.result'), result_survey_path(survey)
           |
