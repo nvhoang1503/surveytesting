@@ -1,0 +1,18 @@
+%ul
+  - if user_signed_in?
+    %li
+      = link_to "Home", root_path
+    - if current_user.is_admin
+      %li
+        = link_to "Accounts", "#"
+      %li
+        = link_to "Categories", categories_path
+      %li
+        = link_to "Surveys", surveys_path
+    - elsif current_user.is_user
+      %li
+        = link_to "My Surveys", my_surveys_surveys_path
+  - else
+    %li
+      = link_to "Guess link", "#"
+

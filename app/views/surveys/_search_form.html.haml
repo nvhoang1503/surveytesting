@@ -1,0 +1,5 @@
+.search_box
+  = search_form_for @q do |f|
+    .input.seach-query
+      = f.text_field :question_cont, :class => "search_query_txt search-query survey", :placeholder => I18n.t('content.club_info.title')
+      %button.search_btn.btn{:type => "submit"}= I18n.t('content.survey.question')

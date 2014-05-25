@@ -1,0 +1,18 @@
+.text.font20.bold= @survey.question
+.add_answer_form.clearfix
+  .text.bold Add answer option 
+  = simple_nested_form_for @survey do |f|
+    = hidden_field_tag "add_answers_action", "add_answers"
+    .answer_box
+      = f.fields_for :answers do |f|
+        .answer_fields
+          = f.input :content, :label => "Answer", :class => "answer_content"
+          = f.link_to_remove "remove", :class => "btn btn_remove_content"
+    = f.link_to_add(:answers, :class => "add_answers", :href => '#') do
+      .btn Add
+    .fields
+      = f.label :another
+      %input{:type => "checkbox",:name => "another_answer", :class => "another_checkbox"}
+    .action_fields
+      = f.button :submit, :value => "Save"
+

@@ -1,0 +1,5 @@
+.my_surveys
+  .text.font14.bold=I18n.t('content.survey.my_survey')
+
+  .list_surveys= render 'list_surveys', :surveys => @surveys
+  = link_to I18n.t('content.survey.create'), new_survey_path, :class => "btn"

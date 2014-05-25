@@ -1,0 +1,21 @@
+.text.font20.bold= @survey.question
+- if @survey.answers
+  .answer_fields_box
+    = hidden_field_tag "survey_id", @survey.id, :id => "survey_id"
+    = hidden_field_tag "answer_type", @survey.answer_type, :id => "answer_type"
+    = hidden_field_tag "user_answer_choice", '', :id => "user_answer_choice"
+    - survey.answers.each do |answer|
+      - unless answer.is_other
+        .answer_fields.clearfix
+          - if survey.is_single_choice
+            .single_choice
+              %input{:type => "radio", :name => "answer_choice", :value => answer.id, :class => "answer_single_choice"}
+          - else
+            .multiple_choice
+              %input{:type => "checkbox", :value => answer.id, :class => "answer_multiple_choice", :name => "answer_choice"}
+          %span= answer.content
+      - else
+        .answer_fields
+          = hidden_field_tag "other_answer_id", answer.id, :id => "other_answer_id"
+          %span= answer.content
+          %input{:type => "text", :name => "other_answer", :class => "other_answer", :id => "other_answer"}

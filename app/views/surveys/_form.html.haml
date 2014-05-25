@@ -1,0 +1,20 @@
+- if @categories && @categories.size > 0
+  = simple_form_for(@survey) do |f|
+    = f.error_notification
+
+    .form-inputs
+      = f.hidden_field :user_id, :value => current_user.id
+      = f.input :question
+      / = f.input :answer_type
+      .field
+        = f.label :category
+        = f.collection_select :category_id, @categories, :id, :name
+      .field
+        = f.label :answer_type
+        = f.select :answer_type, Survey::ANSWER_TYPE.to_a
+
+    .form-actions
+      = f.button :submit
+- else
+  .center
+    You must create category first

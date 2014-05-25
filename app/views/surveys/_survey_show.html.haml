@@ -1,0 +1,14 @@
+.text.font20.bold= @survey.question
+- if @survey.answers
+  .answer_fields_box
+    - index = 0 
+    - survey.answers.each_with_index do |answer,i|
+      - unless answer.is_other
+        .answer_fields.clearfix
+          %span= "#{i + 1 }."
+          %b= answer.content
+          - index = i + 1 
+      - else
+        .answer_fields
+          %span= "#{index + 1}."
+          %b= answer.content

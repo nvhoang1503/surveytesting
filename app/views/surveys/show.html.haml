@@ -1,0 +1,12 @@
+%p
+  %span Category:
+  %b= @survey.category.name if @survey.category
+= render 'survey_show', :survey => @survey
+%br
+%p
+  %b Survey link:
+  = make_survey_survey_url(@survey)
+
+= link_to 'Edit', edit_survey_path(@survey)
+\|
+= link_to 'Back', surveys_path

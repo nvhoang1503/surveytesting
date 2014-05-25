@@ -1,0 +1,20 @@
+.text.font20.bold= @survey.question
+%br
+.number_table
+  %ul
+    - arr_answer = ""
+    -@survey.answers.each_with_index do |answer,i|
+      - rs_count = answer.results.count
+      - arr_answer = "Answer #{i + 1}_#{rs_count}," + arr_answer
+      %li 
+        %p
+          %span= "Answer #{i + 1}: "
+          = answer.content
+          .text.font20
+            %span= "=>" 
+            %span.red= rs_count
+= hidden_field_tag "arr_answer_result", arr_answer, :id => "arr_answer_result"
+= link_to "View chart", "#", :id => "view_chart", :class => "btn btn-primary"
+.chart_data
+  = render 'chart_script'
+

@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Survey:
+  = @result.survey_id
+%p
+  %b Answer:
+  = @result.answer_id
+%p
+  %b Another content:
+  = @result.another_content
+%p
+  %b Answer email:
+  = @result.answer_email
+
+= link_to 'Edit', edit_result_path(@result)
+\|
+= link_to 'Back', results_path

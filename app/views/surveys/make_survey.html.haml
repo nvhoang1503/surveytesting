@@ -1,0 +1,7 @@
+= simple_form_for(:survey, :url => make_survey_save_surveys_path, :html => {:method => "post"}) do |f|
+  = render 'survey_content', :survey => @survey
+  .answer_email_fields
+    %span Your email
+    %input{:type => "text", :name => "answer_email", :class => "answer_email", :id => "answer_email"}
+  .action_form
+    = f.button :submit, :id => "make_user_survey"

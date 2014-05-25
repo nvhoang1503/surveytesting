@@ -1,0 +1,25 @@
+%h1 Listing results
+
+%table
+  %tr
+    %th Survey
+    %th Answer
+    %th Another content
+    %th Answer email
+    %th
+    %th
+    %th
+
+  - @results.each do |result|
+    %tr
+      %td= result.survey_id
+      %td= result.answer_id
+      %td= result.another_content
+      %td= result.answer_email
+      %td= link_to 'Show', result
+      %td= link_to 'Edit', edit_result_path(result)
+      %td= link_to 'Destroy', result, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Result', new_result_path

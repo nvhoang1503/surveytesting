@@ -1,0 +1,11 @@
+= simple_form_for(@result) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :survey_id
+    = f.input :answer_id
+    = f.input :another_content
+    = f.input :answer_email
+
+  .form-actions
+    = f.button :submit

@@ -1,0 +1,66 @@
+.list_surveys{
+  margin-top: 20px;
+}
+.add_answer_form{
+  clear: both;
+  margin-top: 30px;
+}
+.add_answer_form{
+  .fields{
+    clear: both;
+    float: left;
+  }
+}
+.add_answers{
+  float: left;
+  margin-left: 20px;
+}
+.btn_remove_content{
+  float: left;
+}
+.survey_answers_content{
+  float: left;
+}
+.answer_content{
+  float: left;
+}
+.action_fields{
+  clear: both;
+  text-align: center;
+}
+.another_checkbox{
+  width: 10px;
+  height: 10px;
+  margin-top: 5px;
+}
+.answer_fields {
+  margin-top: 20px;
+  padding-left: 50px;
+  clear: both;
+  .single_choice{
+    float: left;
+    width: 30px;
+  }
+  .multiple_choice{
+    float: left;
+    width: 30px;
+  }
+  .other_answer{
+    width: 500px;
+  }
+    
+}
+.answer_email_fields{
+  margin-left: 19px;
+  margin-top: 20px;
+}
+.answer_email{
+  width: 500px;
+}
+.action_form{
+  text-align: center;margin-top: 30px;
+}
+
+.hidden{
+  display: none;
+}
