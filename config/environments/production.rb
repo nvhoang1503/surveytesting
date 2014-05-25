@@ -78,8 +78,8 @@ Surveytesting::Application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-  config.domain = 'http://localhost:3000'
+  config.action_mailer.default_url_options = { :host => 'surveytesting.herokuapp.com' }
+  config.domain = 'http://surveytesting.herokuapp.com'
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
@@ -94,7 +94,7 @@ Surveytesting::Application.configure do
   config.action_mailer.smtp_settings = {
     :address => "smtp.gmail.com",
     :port => 587,
-    :domain => 'localhost:3000',
+    :domain => 'surveytesting.herokuapp.com',
     :user_name => 'surveytesting2014@gmail.com',
     :password => 'testingemail',
     :authentication => 'plain',
