@@ -24,7 +24,11 @@ class SurveysController < ApplicationController
   end
 
   def add_answer
-    @answers = @survey.answers.build
+    if @survey.answers && @survey.answers.count > 0
+      @answers = @survey.answers
+    else
+      @answers = @survey.answers.build
+    end
   end
 
   # GET /surveys/1/edit
